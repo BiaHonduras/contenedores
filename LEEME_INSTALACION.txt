@@ -1,13 +1,18 @@
 BIA CONTROL DE CONTENEDORES - PWA + SUPABASE
 ================================================
 
+ENLACE OFICIAL
+--------------
+https://biahonduras.github.io/contenedores/index.html
+
 Este paquete contiene la aplicación web progresiva completa y lista para
-publicarse como sitio estático.
+publicarse en GitHub Pages conservando exactamente sus carpetas.
 
 ARCHIVOS PRINCIPALES
 --------------------
 - index.html: entrada de la aplicación.
-- _next/: archivos JavaScript y CSS compilados. No cambie su estructura.
+- .nojekyll: permite que GitHub Pages publique correctamente la carpeta _next.
+- _next/: archivos JavaScript y CSS compilados. No cambie su nombre ni estructura.
 - manifest.webmanifest: configuración de instalación de la PWA.
 - sw.js: servicio para instalación y funcionamiento sin conexión.
 - pwa-icon-192.png y pwa-icon-512.png: iconos de la aplicación.
@@ -15,57 +20,34 @@ ARCHIVOS PRINCIPALES
 - docs/Guia_Configuracion_Supabase_BIA.pdf: guía de configuración.
 - supabase-setup.sql: tablas, permisos, almacenamiento y políticas de Supabase.
 
-ANTES DE PUBLICAR
------------------
-1. Abra su proyecto de Supabase.
-2. Entre a SQL Editor.
-3. Copie y ejecute todo el contenido de supabase-setup.sql.
+CONFIGURACIÓN DE SUPABASE
+-------------------------
+1. Abra su proyecto de Supabase y entre a SQL Editor.
+2. Copie y ejecute todo el contenido de supabase-setup.sql.
+3. En Authentication > URL Configuration configure:
+
+   Site URL:
+   https://biahonduras.github.io/contenedores/index.html
+
+   Redirect URL:
+   https://biahonduras.github.io/contenedores/**
+
 4. Revise que Authentication esté habilitado y cree los usuarios que usarán
    la aplicación.
+5. En Configuración dentro de la aplicación capture la URL de su proyecto y
+   la clave pública anon o publishable. Nunca use service_role en el navegador.
 
-PUBLICAR EN SUPABASE STORAGE
-----------------------------
-Supabase es principalmente el backend de la aplicación. Storage permite alojar
-estos archivos, aunque para una PWA de producción suele ser más confiable usar
-un hosting estático y dejar Supabase para la base de datos, usuarios y fotos.
-
-Si desea usar Supabase Storage:
-
-1. En Storage, cree un bucket público, por ejemplo: bia-pwa.
-2. Suba EL CONTENIDO de este paquete, no la carpeta contenedora.
-3. Conserve exactamente las carpetas _next, brand y docs.
-4. Compruebe los tipos de contenido al subir:
-   .html          text/html
-   .js            application/javascript
-   .css           text/css
-   .webmanifest   application/manifest+json
-   .json          application/json
-   .svg           image/svg+xml
-   .png           image/png
-   .pdf           application/pdf
-   .sql y .txt    text/plain
-5. Abra la URL pública completa que termine en /index.html. No use solamente
-   la URL del bucket o de la carpeta.
-6. En Configuración dentro de la aplicación, capture:
-   - URL del proyecto Supabase: https://SU-PROYECTO.supabase.co
-   - Clave pública anon o publishable. Nunca use service_role en el navegador.
-7. En Authentication > URL Configuration de Supabase agregue la URL pública
-   final de index.html y/o la carpeta como Site URL y Redirect URL permitida.
+PUBLICAR EN GITHUB PAGES
+------------------------
+1. Suba EL CONTENIDO de este paquete a la raíz del repositorio contenedores.
+2. Conserve exactamente las carpetas _next, brand y docs.
+3. No cambie la carpeta _next ni chunks. GitHub distingue cada nombre.
+4. Confirme que .nojekyll esté en la raíz del repositorio.
+5. En GitHub, abra Settings > Pages y publique desde la rama principal.
 
 IMPORTANTE
 ----------
-- Todos los archivos deben estar publicados por HTTPS para poder instalar la
-  PWA y registrar el service worker.
-- No abra index.html con doble clic mediante una dirección file://.
-- No cambie nombres ni mueva archivos después de compilarlos.
+- La PWA necesita HTTPS para instalarse y registrar el service worker.
 - El módulo de productos busca por codigo o codigo_barra en la tabla codigo y
   completa automáticamente la columna descripcion.
-- El script supabase-setup.sql incluye los permisos necesarios para consultar
-  esa tabla cuando ya existe en su proyecto.
-
-SITIO ACTUAL PUBLICADO
-----------------------
-https://bia-control-contenedores.mario20141993.chatgpt.site
-
-Ese enlace continúa siendo la opción publicada y recomendada. Este ZIP es una
-copia independiente para descargar, conservar o cargar en otro alojamiento.
+- El botón de copiar acceso y la confirmación por correo usan el enlace oficial.
