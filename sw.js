@@ -1,4 +1,4 @@
-const CACHE = "bia-control-static-v9";
+const CACHE = "bia-control-static-v10";
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
@@ -9,17 +9,17 @@ const SHELL = [
   "./pwa-icon-maskable-512.png",
   "./brand/bia-honduras-logo.png",
   "./_next/static/css/6a3edeef37f07abf.css",
-  "./_next/static/chunks/webpack-3453c084f985ffaa.js?v=20260925-1",
+  "./_next/static/chunks/webpack-3453c084f985ffaa.js?v=20260925-2",
   "./_next/static/chunks/6e872619-786c051ee335684e.js",
   "./_next/static/chunks/278-af191a4015605946.js",
   "./_next/static/chunks/main-app-6a57d4249a0aab8a.js",
   "./_next/static/chunks/225f4a99-080ca0e0b4cc8aed.js",
   "./_next/static/chunks/212-6c11b835cb7b05c5.js",
-  "./_next/static/chunks/app/page-e03e9ef51e579945.js?v=20260925-7",
+  "./_next/static/chunks/app/page-e03e9ef51e579945.js?v=20260925-8",
   "./_next/static/chunks/1b4af218.422aa8c3a13a46c4.js",
   "./_next/static/chunks/44c1821e.1a5ccd9ecd1fe72f.js",
   "./_next/static/chunks/524.ea46500ef32268b6.js",
-  "./_next/static/chunks/391.66cd212963d6ece7.js?v=20260925-1",
+  "./_next/static/chunks/391.6f3b75d9c2a8410e.js",
   "./_next/static/chunks/polyfills-42372ed130431b0a.js",
   "./supabase-setup.sql",
   "./docs/Guia_Configuracion_Supabase_BIA.pdf",
