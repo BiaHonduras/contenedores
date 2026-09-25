@@ -1,4 +1,4 @@
-const CACHE = "bia-control-static-v10";
+const CACHE = "bia-control-static-v11";
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
@@ -15,7 +15,7 @@ const SHELL = [
   "./_next/static/chunks/main-app-6a57d4249a0aab8a.js",
   "./_next/static/chunks/225f4a99-080ca0e0b4cc8aed.js",
   "./_next/static/chunks/212-6c11b835cb7b05c5.js",
-  "./_next/static/chunks/app/page-e03e9ef51e579945.js?v=20260925-8",
+  "./_next/static/chunks/app/page-e03e9ef51e579945.js?v=20260925-9",
   "./_next/static/chunks/1b4af218.422aa8c3a13a46c4.js",
   "./_next/static/chunks/44c1821e.1a5ccd9ecd1fe72f.js",
   "./_next/static/chunks/524.ea46500ef32268b6.js",
