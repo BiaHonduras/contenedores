@@ -1,0 +1,5 @@
+@media (min-width: 640px) {
+  .bia-mobile-install {
+    display: none !important;
+  }
+}

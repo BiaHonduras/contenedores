@@ -2,7 +2,7 @@
 2:I[88451,[],""]
 3:I[93343,[],""]
 4:I[74030,[],"ClientPageRoot"]
-5:I[37340,["897","static/chunks/225f4a99-080ca0e0b4cc8aed.js","212","static/chunks/212-6c11b835cb7b05c5.js","974","static/chunks/app/page-e03e9ef51e579945.js?v=20260925-4"],"default"]
+5:I[37340,["897","static/chunks/225f4a99-080ca0e0b4cc8aed.js","212","static/chunks/212-6c11b835cb7b05c5.js","974","static/chunks/app/page-e03e9ef51e579945.js?v=20260925-6"],"default"]
 8:I[43786,[],"OutletBoundary"]
 9:"$Sreact.suspense"
 b:I[43786,[],"ViewportBoundary"]
@@ -15,4 +15,4 @@ f:I[60457,[],"default",1]
 c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#244a86"}]]
 10:I[39071,[],"IconMark"]
 a:null
-e:[["$","title","0",{"children":"BIA Control de Contenedores"}],["$","meta","1",{"name":"description","content":"Registro de contenedores sellados, reclamos por producto dañado y formatos imprimibles."}],["$","meta","2",{"name":"application-name","content":"BIA Control"}],["$","link","3",{"rel":"manifest","href":"manifest.webmanifest","crossOrigin":"$undefined"}],["$","link","4",{"rel":"canonical","href":"https://biahonduras.github.io/contenedores/index.html"}],["$","meta","5",{"name":"format-detection","content":"telephone=no"}],["$","meta","6",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","7",{"name":"apple-mobile-web-app-title","content":"BIA Control"}],["$","meta","8",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","link","9",{"rel":"shortcut icon","href":"favicon.svg"}],["$","link","10",{"rel":"icon","href":"favicon.svg"}],["$","link","11",{"rel":"apple-touch-icon","href":"pwa-icon-192.png"}],["$","$L10","12",{}]]
+e:[["$","title","0",{"children":"BIA Control de Contenedores"}],["$","meta","1",{"name":"description","content":"Registro de contenedores sellados y reclamos por daños, faltantes o sobrantes."}],["$","meta","2",{"name":"application-name","content":"BIA Control"}],["$","link","3",{"rel":"manifest","href":"manifest.webmanifest","crossOrigin":"$undefined"}],["$","link","4",{"rel":"canonical","href":"https://biahonduras.github.io/contenedores/index.html"}],["$","meta","5",{"name":"format-detection","content":"telephone=no"}],["$","meta","6",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","7",{"name":"apple-mobile-web-app-title","content":"BIA Control"}],["$","meta","8",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","link","9",{"rel":"shortcut icon","href":"favicon.svg"}],["$","link","10",{"rel":"icon","href":"favicon.svg"}],["$","link","11",{"rel":"apple-touch-icon","href":"pwa-icon-192.png"}],["$","$L10","12",{}]]
