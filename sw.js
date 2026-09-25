@@ -1,4 +1,4 @@
-const CACHE = "bia-control-static-v5";
+const CACHE = "bia-control-static-v6";
 const SHELL = [
   "./index.html",
   "./manifest.webmanifest",
