@@ -48,6 +48,9 @@ PUBLICAR EN GITHUB PAGES
 IMPORTANTE
 ----------
 - La PWA necesita HTTPS para instalarse y registrar el service worker.
-- El módulo de productos busca por codigo o codigo_barra en la tabla codigo y
+- El módulo de productos busca por codigo o codigo_barra en la tabla codigos y
   completa automáticamente la columna descripcion.
+- La conexión al proyecto oficial de Supabase queda preconfigurada con la clave
+  pública. Los usuarios deben iniciar sesión y estar activos para consultar el
+  catálogo; nunca se incluye una clave secret o service_role en la aplicación.
 - El botón de copiar acceso y la confirmación por correo usan el enlace oficial.

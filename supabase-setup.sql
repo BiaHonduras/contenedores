@@ -308,18 +308,12 @@ grant select, insert, update, delete on public.supplier_claims to authenticated;
 -- Si la tabla tiene RLS activo, esta política permite la consulta a usuarios activos.
 do $$
 begin
-  if to_regclass('public.codigo') is not null then
-    execute 'grant select (codigo, codigo_barra, descripcion) on public.codigo to authenticated';
-
-    if exists (
-      select 1
-      from pg_class
-      where oid = 'public.codigo'::regclass
-        and relrowsecurity = true
-    ) then
-      execute 'drop policy if exists "Usuarios activos consultan catalogo" on public.codigo';
-      execute 'create policy "Usuarios activos consultan catalogo" on public.codigo for select to authenticated using (public.current_user_is_active())';
-    end if;
+  if to_regclass('public.codigos') is not null then
+    execute 'alter table public.codigos enable row level security';
+    execute 'revoke select on public.codigos from anon';
+    execute 'grant select (codigo, codigo_barra, descripcion) on public.codigos to authenticated';
+    execute 'drop policy if exists "Usuarios activos consultan catalogo" on public.codigos';
+    execute 'create policy "Usuarios activos consultan catalogo" on public.codigos for select to authenticated using (public.current_user_is_active())';
   end if;
 end;
 $$;
