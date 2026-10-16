@@ -138,3 +138,5 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.bia-site-switcher{display:flex;gap:6px;padding:6px;background:#eaf1fb;border:1px solid #ccd9ef;border-radius:14px;width:fit-content;margin-bottom:18px}.bia-site-switcher button{border:0;border-radius:10px;padding:10px 24px;color:#244a86;font-weight:700;cursor:pointer}.bia-site-switcher .current-area{background:#244a86;color:white;box-shadow:0 3px 10px #244a8633}.bia-site-switcher button:disabled{opacity:.4;cursor:not-allowed}.bia-history-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.bia-history-filters label{font-size:14px;font-weight:600;color:#334155}.bia-history-filters select{display:block;width:100%;margin-top:6px;border:1px solid #cbd5e1;border-radius:8px;padding:10px;background:white;color:#0f172a}@media(max-width:640px){.bia-history-filters{grid-template-columns:1fr}.bia-site-switcher{width:100%}.bia-site-switcher button{flex:1}}
