@@ -1,6 +1,6 @@
-const CACHE = "bia-control-static-v14";
+const CACHE = "bia-control-static-v15";
 const SHELL = [
-  "./report-excel.js?v=20261016-2",
+  "./report-excel-v2.js?v=20261016-3",
   "./index.html",
   "./manifest.webmanifest",
   "./pwa-mobile.css?v=20261016-2",
