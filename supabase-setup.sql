@@ -11,7 +11,7 @@ create table if not exists public.user_profiles (
   full_name text not null default '',
   employee_code text not null default '',
   role text not null default 'operador' check (role in ('admin', 'operador', 'consulta')),
-  agency text not null default 'SPS' check (agency in ('SPS', 'CBA', 'SRC', 'TGU')),
+  agency text not null default 'SPS' check (agency in ('SPS', 'CBA', 'SRC', 'TGU', 'AMT')),
   is_active boolean not null default false,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -48,7 +48,7 @@ declare
 begin
   select not exists (select 1 from public.user_profiles) into is_first_user;
   selected_agency := upper(coalesce(new.raw_user_meta_data ->> 'agency', 'SPS'));
-  if selected_agency not in ('SPS', 'CBA', 'SRC', 'TGU') then
+  if selected_agency not in ('SPS', 'CBA', 'SRC', 'TGU', 'AMT') then
     selected_agency := 'SPS';
   end if;
 
@@ -87,7 +87,7 @@ select
   coalesce(u.raw_user_meta_data ->> 'employee_code', ''),
   'operador',
   case
-    when upper(coalesce(u.raw_user_meta_data ->> 'agency', 'SPS')) in ('SPS', 'CBA', 'SRC', 'TGU')
+    when upper(coalesce(u.raw_user_meta_data ->> 'agency', 'SPS')) in ('SPS', 'CBA', 'SRC', 'TGU', 'AMT')
       then upper(coalesce(u.raw_user_meta_data ->> 'agency', 'SPS'))
     else 'SPS'
   end,
@@ -198,7 +198,7 @@ begin
       and conrelid = 'public.supplier_claims'::regclass
   ) then
     alter table public.supplier_claims
-      add constraint supplier_claims_agency_check check (agency in ('SPS', 'CBA', 'SRC', 'TGU'));
+      add constraint supplier_claims_agency_check check (agency in ('SPS', 'CBA', 'SRC', 'TGU', 'AMT'));
   end if;
 end;
 $$;
