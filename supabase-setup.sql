@@ -377,3 +377,6 @@ create trigger supplier_claims_management_number before insert or update on publ
 for each row execute function bia_private.assign_management_number();
 alter table public.supplier_claims alter column management_number set not null;
 commit;
+
+-- Origen de traslados internos (opcional para registros anteriores).
+alter table public.supplier_claims add column if not exists transfer_origin text not null default '';
