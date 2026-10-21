@@ -1,4 +1,4 @@
-const CACHE = "bia-control-static-v25";
+const CACHE = "bia-control-static-v26";
 const SHELL = [
   "./login.html",
   "./report-excel-v2.js?v=20261021-5",
@@ -27,40 +27,38 @@ const SHELL = [
   "./docs/Guia_Configuracion_Supabase_BIA.pdf",
 ];
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+// Clone synchronously before returning a response to the browser. Cache writes
+// may finish later; they must never clone a body that has already been consumed.
+function remember(event, request, response) {
+  if (!response.ok) return response;
+  const copy = response.clone();
+  event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
+  return response;
+}
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)))).then(() => self.clients.claim()),
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(
+    keys.filter(key => key.startsWith('bia-control-static-v') && key !== CACHE).map(key => caches.delete(key))
+  )).then(() => self.clients.claim()));
 });
-
-self.addEventListener("fetch", (event) => {
-  const request = event.request;
-  const url = new URL(request.url);
-  if (request.method !== "GET" || url.origin !== self.location.origin) return;
-
-  if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(new URL("./index.html", self.location.href), copy));
-          return response;
-        })
-        .catch(() => caches.match(new URL("./index.html", self.location.href))),
-    );
+self.addEventListener('fetch', event => {
+  const request = event.request, url = new URL(request.url);
+  // Other apps, external libraries and APIs use the browser's normal network.
+  if (request.method !== 'GET' || url.origin !== self.location.origin || !url.pathname.startsWith(new URL(self.registration.scope).pathname)) return;
+  if (request.mode === 'navigate') {
+    event.respondWith(fetch(request).then(response => remember(event, request, response)).catch(async () => {
+      const cache = await caches.open(CACHE);
+      return await cache.match(request) || await cache.match('./login.html') || new Response('Sin conexión. Recarga cuando se restablezca la red.', {status:503, headers:{'Content-Type':'text/plain; charset=utf-8'}});
+    }));
     return;
   }
-
-  event.respondWith(
-    caches.match(request).then((cached) =>
-      cached || fetch(request).then((response) => {
-        if (response.ok) caches.open(CACHE).then((cache) => cache.put(request, response.clone()));
-        return response;
-      }),
-    ),
-  );
+  if (!/\.(?:html|js|mjs|css|png|svg|webmanifest|ico|woff2?|jpg|jpeg|pdf|sql)$/.test(url.pathname)) return;
+  event.respondWith(caches.open(CACHE).then(async cache => {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    return fetch(request).then(response => remember(event, request, response));
+  }));
 });
+self.addEventListener('message', event => { if (event.data === 'SKIP_WAITING') self.skipWaiting(); });
