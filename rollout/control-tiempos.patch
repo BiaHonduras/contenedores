@@ -1,0 +1,208 @@
+diff --git a/amt.html b/amt.html
+index df7b257..81fbf66 100644
+--- a/amt.html
++++ b/amt.html
+@@ -1532,13 +1532,13 @@ body{
+ </style>
+ 
+   <link rel="stylesheet" href="./warehouse-ui.css?v=3.1.13">
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ </head>
+ <body data-sede="AMT">
+ <header class="app-header">
+@@ -1614,7 +1614,7 @@ body{
+         <div><label>Nombre</label><input id="accessNombre" maxlength="120" autocomplete="off" placeholder="Nombre del usuario"></div>
+         <div><label>Contraseña temporal</label><input id="accessPassword" type="password" value="" disabled minlength="8" autocomplete="new-password" placeholder="Se genera al crear la cuenta"></div>
+         <div><label>Sede</label><select id="accessSede"><option value="SPS">SPS</option><option value="CBA">CBA</option><option value="SRC">SRC</option><option value="TGU">TGU</option><option value="AMT">AMT</option></select></div>
+-        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="admin">Administrador</option></select></div>
++        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="operador">Operador (Contenedores)</option><option value="admin">Administrador</option></select></div>
+         <div><label>Permiso cierre</label><select id="accessCierre"><option value="false">No</option><option value="true">Sí</option></select></div>
+         <div class="admin-form-actions"><button id="accessSubmitBtn" class="primary" type="submit">Crear / asignar usuario</button><button id="accessCancel" class="light" type="button">Limpiar</button></div>
+       </form>
+diff --git a/cambiar-password.html b/cambiar-password.html
+index 52e3cd4..6e50015 100644
+--- a/cambiar-password.html
++++ b/cambiar-password.html
+@@ -4,13 +4,13 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+   <title>Ingreso | BIA Control Operativo</title>
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <style>
+     :root{--navy:#17305c;--navy2:#23467d;--blue:#4387f5;--sky:#eaf2ff;--ink:#182230;--muted:#667085;--line:#dfe7f1;--white:#fff;--danger:#b42318}
+     *{box-sizing:border-box}html,body{min-height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+diff --git a/cba.html b/cba.html
+index d2c2119..5cce259 100644
+--- a/cba.html
++++ b/cba.html
+@@ -1532,13 +1532,13 @@ body{
+ </style>
+ 
+   <link rel="stylesheet" href="./warehouse-ui.css?v=3.1.13">
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ </head>
+ <body data-sede="CBA">
+ <header class="app-header">
+@@ -1614,7 +1614,7 @@ body{
+         <div><label>Nombre</label><input id="accessNombre" maxlength="120" autocomplete="off" placeholder="Nombre del usuario"></div>
+         <div><label>Contraseña temporal</label><input id="accessPassword" type="password" value="" disabled minlength="8" autocomplete="new-password" placeholder="Se genera al crear la cuenta"></div>
+         <div><label>Sede</label><select id="accessSede"><option value="SPS">SPS</option><option value="CBA">CBA</option><option value="SRC">SRC</option><option value="TGU">TGU</option><option value="AMT">AMT</option></select></div>
+-        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="admin">Administrador</option></select></div>
++        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="operador">Operador (Contenedores)</option><option value="admin">Administrador</option></select></div>
+         <div><label>Permiso cierre</label><select id="accessCierre"><option value="false">No</option><option value="true">Sí</option></select></div>
+         <div class="admin-form-actions"><button id="accessSubmitBtn" class="primary" type="submit">Crear / asignar usuario</button><button id="accessCancel" class="light" type="button">Limpiar</button></div>
+       </form>
+diff --git a/cronometros.html b/cronometros.html
+index 5b05e62..9297cbe 100644
+--- a/cronometros.html
++++ b/cronometros.html
+@@ -1532,13 +1532,13 @@ body{
+ </style>
+ 
+   <link rel="stylesheet" href="./warehouse-ui.css?v=3.1.13">
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ </head>
+ <body data-sede="SPS">
+ <header class="app-header">
+@@ -1614,7 +1614,7 @@ body{
+         <div><label>Nombre</label><input id="accessNombre" maxlength="120" autocomplete="off" placeholder="Nombre del usuario"></div>
+         <div><label>Contraseña temporal</label><input id="accessPassword" type="password" value="" disabled minlength="8" autocomplete="new-password" placeholder="Se genera al crear la cuenta"></div>
+         <div><label>Sede</label><select id="accessSede"><option value="SPS">SPS</option><option value="CBA">CBA</option><option value="SRC">SRC</option><option value="TGU">TGU</option><option value="AMT">AMT</option></select></div>
+-        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="admin">Administrador</option></select></div>
++        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="operador">Operador (Contenedores)</option><option value="admin">Administrador</option></select></div>
+         <div><label>Permiso cierre</label><select id="accessCierre"><option value="false">No</option><option value="true">Sí</option></select></div>
+         <div class="admin-form-actions"><button id="accessSubmitBtn" class="primary" type="submit">Crear / asignar usuario</button><button id="accessCancel" class="light" type="button">Limpiar</button></div>
+       </form>
+diff --git a/index.html b/index.html
+index f5a2692..a5cfdb5 100644
+--- a/index.html
++++ b/index.html
+@@ -4,13 +4,13 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+   <title>Ingreso | BIA Control Operativo</title>
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <style>
+     :root{--navy:#17305c;--navy2:#23467d;--blue:#4387f5;--sky:#eaf2ff;--ink:#182230;--muted:#667085;--line:#dfe7f1;--white:#fff;--danger:#b42318}
+     *{box-sizing:border-box}html,body{min-height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+diff --git a/offline.html b/offline.html
+index e088429..0fd69c3 100644
+--- a/offline.html
++++ b/offline.html
+@@ -5,7 +5,7 @@
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#0b2346">
+ <title>Sin conexión | BIA Honduras</title>
+-<link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++<link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ <style>
+ :root{--navy:#0b2346;--blue:#2f7cf6;--muted:#66758a}
+ *{box-sizing:border-box}
+diff --git a/service-worker.js b/service-worker.js
+index cf96386..039bae8 100644
+--- a/service-worker.js
++++ b/service-worker.js
+@@ -1,4 +1,4 @@
+-const CACHE_NAME='bia-control-v3.1.13-sedes-barra';
++const CACHE_NAME='bia-control-v3.1.14-shared-favicon';
+ const APP_SHELL=[
+   './','./index.html','./cambiar-password.html','./cronometros.html','./cba.html','./src.html','./tgu.html','./amt.html','./cronometros.js','./cronometros.js?v=20261016-sedes','./supabase-config.js',
+   './vendor/jszip.min.js','./pwa.js','./offline.html','./warehouse-ui.css','./warehouse-ui.css?v=3.1.13',
+diff --git a/src.html b/src.html
+index ae86a44..4c4d59e 100644
+--- a/src.html
++++ b/src.html
+@@ -1532,13 +1532,13 @@ body{
+ </style>
+ 
+   <link rel="stylesheet" href="./warehouse-ui.css?v=3.1.13">
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ </head>
+ <body data-sede="SRC">
+ <header class="app-header">
+@@ -1614,7 +1614,7 @@ body{
+         <div><label>Nombre</label><input id="accessNombre" maxlength="120" autocomplete="off" placeholder="Nombre del usuario"></div>
+         <div><label>Contraseña temporal</label><input id="accessPassword" type="password" value="" disabled minlength="8" autocomplete="new-password" placeholder="Se genera al crear la cuenta"></div>
+         <div><label>Sede</label><select id="accessSede"><option value="SPS">SPS</option><option value="CBA">CBA</option><option value="SRC">SRC</option><option value="TGU">TGU</option><option value="AMT">AMT</option></select></div>
+-        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="admin">Administrador</option></select></div>
++        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="operador">Operador (Contenedores)</option><option value="admin">Administrador</option></select></div>
+         <div><label>Permiso cierre</label><select id="accessCierre"><option value="false">No</option><option value="true">Sí</option></select></div>
+         <div class="admin-form-actions"><button id="accessSubmitBtn" class="primary" type="submit">Crear / asignar usuario</button><button id="accessCancel" class="light" type="button">Limpiar</button></div>
+       </form>
+diff --git a/tgu.html b/tgu.html
+index 3acdc6a..6f1262a 100644
+--- a/tgu.html
++++ b/tgu.html
+@@ -1532,13 +1532,13 @@ body{
+ </style>
+ 
+   <link rel="stylesheet" href="./warehouse-ui.css?v=3.1.13">
+-  <link rel="icon" href="./icons/warehouse.svg" type="image/svg+xml">
++  <link rel="icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+   <link rel="manifest" href="./manifest.webmanifest">
+   <meta name="theme-color" content="#17305c">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-  <link rel="apple-touch-icon" href="./icons/warehouse-192.png">
++  <link rel="apple-touch-icon" type="image/png" href="https://biahonduras.github.io/devoluciones/favicon.png?v=2">
+ </head>
+ <body data-sede="TGU">
+ <header class="app-header">
+@@ -1614,7 +1614,7 @@ body{
+         <div><label>Nombre</label><input id="accessNombre" maxlength="120" autocomplete="off" placeholder="Nombre del usuario"></div>
+         <div><label>Contraseña temporal</label><input id="accessPassword" type="password" value="" disabled minlength="8" autocomplete="new-password" placeholder="Se genera al crear la cuenta"></div>
+         <div><label>Sede</label><select id="accessSede"><option value="SPS">SPS</option><option value="CBA">CBA</option><option value="SRC">SRC</option><option value="TGU">TGU</option><option value="AMT">AMT</option></select></div>
+-        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="admin">Administrador</option></select></div>
++        <div><label>Rol</label><select id="accessRol"><option value="consulta">Solo consulta</option><option value="operador">Operador (Contenedores)</option><option value="admin">Administrador</option></select></div>
+         <div><label>Permiso cierre</label><select id="accessCierre"><option value="false">No</option><option value="true">Sí</option></select></div>
+         <div class="admin-form-actions"><button id="accessSubmitBtn" class="primary" type="submit">Crear / asignar usuario</button><button id="accessCancel" class="light" type="button">Limpiar</button></div>
+       </form>
