@@ -1,4 +1,4 @@
-# Usuarios compartidos BIA: cambio preparado, pendiente de autorización de producción
+# Usuarios compartidos BIA: migración autorizada y desplegada
 
 ## Problema y comportamiento resultante
 
@@ -48,4 +48,8 @@ No se pudo ejecutar una prueba visual de navegador: la descarga del navegador de
 
 ## Estado
 
-La revisión automática rechazó ejecutar la migración de producción por el alcance de los cambios de identidad/RLS. No se ejecutó. Las funciones nuevas tampoco se desplegaron porque dependen de la migración. Este PR se deja para revisión y autorización expresa del cambio descrito.
+El usuario autorizó expresamente la migración. Se aplicó en producción y se desplegaron ambas funciones con `verify_jwt=true`. Los PR de Contenedores y Devoluciones se integraron en `main`.
+
+Verificación en producción: 21 accesos por sede, 9 identidades vinculadas y ningún acceso sin identidad. El perfil y listado de un administrador devolvieron el rol y los accesos esperados. Las funciones compartidas rechazan el rol `anon` y RLS sigue habilitado.
+
+Control de Tiempos ya utiliza `admin-users` y `usuarios_sedes`; por tanto comparte las altas y accesos mediante el servidor actualizado. El parche de su favicon y de la opción visual `operador` sigue pendiente porque GitHub devuelve 403 de escritura en ese repositorio.
